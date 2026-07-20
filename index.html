@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload Customer XML</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="page-shell">
+        <div class="upload-box">
+            <div class="upload-card">
+                <h1>Upload Customer XML</h1>
+                <div class="file-row">
+                    <div class="file-input-wrapper">
+                        <input type="file" id="xmlFile" accept=".xml">
+                        <label for="xmlFile" class="file-label">Choose file</label>
+                        <span id="fileName" class="file-name">customer xml</span>
+                    </div>
+                    <button type="button" id="uploadBtn" class="primary">Upload XML</button>
+                </div>
+                <div id="uploadStatus" style="margin-top:10px;color:#475569;font-size:0.95rem"></div>
+                <p style="margin-top:14px;color:#94a3b8;font-size:0.85rem;">
+                    The rendered article will open in a new browser tab.
+                </p>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

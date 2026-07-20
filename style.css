@@ -1,0 +1,298 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background: #f3f4f6;
+    font-family: "Times New Roman", Times, serif;
+    padding: 40px;
+}
+
+.page-shell {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 28px 20px;
+}
+
+.upload-box {
+    text-align: center;
+    margin-bottom: 24px;
+}
+
+.upload-card {
+    background: #fff;
+    padding: 28px;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(15,23,42,0.06);
+}
+
+.file-row {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    align-items: center;
+}
+
+.file-input-wrapper {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    background: #fff;
+    padding: 8px 12px;
+    border-radius: 8px;
+    border: 1px solid #e6edf3;
+}
+
+.file-input-wrapper input[type="file"] {
+    position: absolute;
+    left: -9999px;
+}
+
+.file-label {
+    background: #eef2ff;
+    color: #3730a3;
+    padding: 8px 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    border: 1px solid rgba(99,102,241,0.12);
+}
+
+.file-name {
+    color: #334155;
+    font-size: 0.95rem;
+    max-width: 420px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.primary {
+    background: linear-gradient(180deg,#2563eb,#1e40af);
+    color: #fff;
+    padding: 10px 18px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    font-weight: 700;
+}
+
+.primary:hover { filter: brightness(.95); }
+
+/* Reference status shown when a citation is clicked */
+.reference-status {
+    position: fixed;
+    right: 24px;
+    top: 24px;
+    background: rgba(17,24,39,0.9);
+    color: #fff;
+    padding: 8px 12px;
+    border-radius: 8px;
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    font-weight: 600;
+    display: none;
+    z-index: 9999;
+}
+
+.reference-status.visible {
+    display: block;
+}
+
+h1 {
+    margin-bottom: 25px;
+    color: #222;
+}
+
+input[type="file"] {
+    padding: 10px;
+    background: white;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+}
+
+button {
+    padding: 12px 20px;
+    margin-left: 10px;
+    background: #2563eb;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #1d4ed8;
+}
+
+.journal-container {
+    display: flex;
+    justify-content: center;
+}
+
+.xml-browser {
+    width: min(1080px, 100%);
+    background: white;
+    padding: 32px;
+    border-radius: 14px;
+    box-shadow: 0 18px 50px rgba(15, 23, 42, 0.08);
+}
+
+.xml-row {
+    display: grid;
+    grid-template-columns: 240px minmax(0, 1fr);
+    gap: 20px;
+    padding: 18px 0;
+    border-bottom: 1px solid #e5e7eb;
+    align-items: start;
+}
+
+.xml-row:last-child {
+    border-bottom: none;
+}
+
+.xml-tag {
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: #475569;
+    text-transform: lowercase;
+    letter-spacing: 0.02em;
+}
+
+.xml-value {
+    font-size: 1rem;
+    color: #1f2937;
+    line-height: 1.8;
+    white-space: pre-wrap;
+}
+
+.author-id {
+    color: #2563eb;
+    text-decoration: underline;
+    margin-left: 0.15em;
+}
+
+.xml-table-wrap {
+    width: 100%;
+    overflow: auto;
+    margin: 12px 0;
+}
+
+.xml-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.95rem;
+    color: #111827;
+}
+
+.xml-table th,
+.xml-table td {
+    border: 1px solid #e5e7eb;
+    padding: 8px 10px;
+    text-align: left;
+}
+
+/* Ensure table layout and cell wrapping behave correctly */
+.xml-table {
+    table-layout: auto;
+    width: 100%;
+}
+
+.xml-table th, .xml-table td {
+    white-space: normal;
+}
+
+.xml-value .xml-table {
+    margin: 0;
+}
+
+.xml-table-label {
+    font-weight: 700;
+    margin-bottom: 6px;
+    color: #0f172a;
+}
+
+.xml-table-caption {
+    margin-bottom: 12px;
+    color: #475569;
+}
+
+.xml-section-heading {
+    font-size: 1.04rem;
+    font-weight: 700;
+    margin-bottom: 12px;
+    color: #0f172a;
+}
+
+.figure-label {
+    display: block;
+    font-weight: 700;
+    margin-top: 16px;
+    margin-bottom: 8px;
+    color: #1f2937;
+}
+
+.figure-caption {
+    margin-top: 8px;
+    color: #475569;
+    line-height: 1.75;
+}
+
+.upload-box {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+@media (max-width: 900px) {
+    .xml-row {
+        grid-template-columns: 1fr;
+    }
+
+    .xml-tag {
+        margin-bottom: 10px;
+    }
+}
+
+/* Citation badge styles for bibliographic xref (bibr) */
+.xml-citation {
+    color: #2563eb;
+    text-decoration: none;
+}
+
+.xml-citation-bibr {
+    display: inline-block;
+    background: linear-gradient(180deg,#eef2ff,#dbeafe);
+    color: #0f172a;
+    border: 1px solid rgba(37,99,235,0.12);
+    padding: 3px 8px;
+    font-size: 0.82rem;
+    line-height: 1;
+    border-radius: 999px;
+    margin: 0 2px;
+    vertical-align: baseline;
+    font-weight: 700;
+}
+
+.xml-citation-bibr:hover {
+    filter: brightness(.98);
+}
+
+/* small popup used when clicking a citation (keeps existing behavior) */
+.citation-popup {
+    position: fixed;
+    right: 24px;
+    bottom: 24px;
+    background: rgba(17,24,39,0.9);
+    color: #fff;
+    padding: 8px 12px;
+    border-radius: 8px;
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    font-weight: 600;
+    z-index: 99999;
+    opacity: 0;
+    transform: translateY(8px);
+    transition: opacity 160ms ease, transform 160ms ease;
+    pointer-events: none;
+}
+.citation-popup.visible { opacity: 1; transform: translateY(0); pointer-events: auto; }
